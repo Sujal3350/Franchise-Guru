@@ -1,0 +1,125 @@
+/* Food.css */
+
+.food {
+  background-color: #f5f6fa; /* Light Gray */
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fo {
+  margin-top: 1260px;
+}
+
+.container-food {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.container1,
+.container2,
+.container3 {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.franchise-card {
+  background-color: #fff; /* White for contrast */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: transform 0.3s ease;
+}
+
+.franchise-card:hover {
+  transform: translateY(-8px);
+}
+
+.franchise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.franchise-name {
+  font-size: 1.5rem;
+  color: #0a1f44; /* Navy Blue */
+  margin: 0;
+}
+
+.verified {
+  background-color: #00a9e0; /* Sky Blue */
+  color: white;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.franchise-content {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.franchise-photo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 4px;
+  background-color: #fff;
+}
+
+.franchise-details p {
+  font-size: 0.95rem;
+  color: #333333; /* Charcoal */
+  margin: 6px 0;
+}
+
+.info-btn a {
+  display: inline-block;
+  background-color: #0a1f44; /* Navy Blue */
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.info-btn a:hover {
+  background-color: #ffa500; /* Bright Orange */
+}
+
+.investment-info {
+  font-size: 0.92rem;
+  color: #5f4a32; /* Dark brown from Home.css */
+  margin-top: 12px;
+  padding-left: 8px;
+  border-left: 4px solid #5f4a32; /* Dark brown */
+}
+
+.investment-info p {
+  margin: 8px 0;
+}
+
+.franchise-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.rating {
+  font-size: 1rem;
+  color: #ffc107;
+  font-weight: bold;
+  background-color: #ffa500; /* Bright Orange */
+  padding: 6px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}

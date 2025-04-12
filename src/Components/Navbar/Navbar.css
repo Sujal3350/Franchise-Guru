@@ -1,0 +1,41 @@
+.navbar {
+    background-color: #0a1f44; /* Navy Blue */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    align-items: center;
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1000; /* Ensure navbar stays above other elements */
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00a9e0; /* Sky Blue */
+    margin-right: auto; /* Align logo to the left */
+    margin-left: 20px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between links */
+}
+
+.navbar-links a {
+    color: #f5f6fa; /* Light Gray */
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #ffa500; /* Bright Orange */
+    color: #ffffff; /* White text on hover */
+}

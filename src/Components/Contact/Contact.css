@@ -1,0 +1,137 @@
+/* Contact.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f3e7d9, #e4cfc3); /* light warm beige to peachy brown */
+    /* Removed overflow: hidden to allow scrolling */
+  }
+  
+  /* Full-page centering */
+  .contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 400px;
+    align-items: center;     /* horizontal */
+    justify-content: flex-start; /* Adjusted to allow content to flow */
+    background: linear-gradient(to right, #f5f6fa, #e0e7ef); /* Light Gray gradient */
+  }
+  
+  /* Center section */
+  .contact-section {
+    flex: 1; /* Ensures the section takes up all available space between navbar and footer */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove any padding */
+  }
+  
+  /* Main contact form box */
+  .contact-box {
+    background: #ffffff; /* White */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make the box cover the entire middle section */
+    width: 35%; /* Full width */
+   margin-top: 50px;/* Remove margin */
+    border-radius: 0; /* Remove border radius */
+    box-shadow: none; /* Remove shadow */
+    border-radius: 8px; /* Remove border */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: left;
+    animation: fadeIn 0.6s ease-in-out; /* Optional animation */
+  }
+  
+  .contact-box h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #0a1f44; /* Navy Blue */
+  }
+  
+  .contact-box p {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #333333; /* Charcoal */
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #0a1f44; /* Navy Blue */
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #00a9e0; /* Sky Blue */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fdf8f3;
+    color: #4a3b2a;
+    transition: border-color 0.3s;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #ffa500; /* Bright Orange */
+    outline: none;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  /* Button with warm chocolate tone */
+  .contact-form button {
+    background-color: #0a1f44; /* Navy Blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #00a9e0; /* Sky Blue */
+  }
+  
+  /* Footer */
+  .contact-footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #0a1f44; /* Navy Blue */
+    color: white;
+    font-size: 0.9rem;
+    position: fixed; /* Fix footer at the bottom */
+    bottom: 0;
+    left: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

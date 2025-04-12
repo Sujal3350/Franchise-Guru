@@ -1,0 +1,149 @@
+/* Retail.css */
+
+.ro {
+  background-color: #f5f6fa; /* Light Gray */
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1180px;
+}
+
+.container-retail,
+.container-shoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.container1,
+.container2,
+.container3 {
+  flex: 1 1 300px;
+  max-width: 400px; /* Updated to match Food.css */
+}
+
+.franchise-card {
+  background-color: #fff; /* White for contrast */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  padding: 24px; /* Added padding for consistency */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.franchise-card:hover {
+  transform: translateY(-8px);
+}
+
+.franchise-header {
+  background-color: transparent; /* Removed background for consistency */
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.franchise-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a1f44; /* Navy Blue */
+}
+
+.verified {
+  background-color: #00a9e0; /* Sky Blue */
+  color: white;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.franchise-content {
+  display: flex;
+  padding: 0;
+  gap: 16px; /* Updated gap */
+  margin-bottom: 16px;
+}
+
+.franchise-photo img {
+  width: 100px;
+  height: 100px; /* Updated height for consistency */
+  object-fit: contain;
+  border-radius: 10px; /* Updated border radius */
+  border: 1px solid #ddd; /* Added border */
+  padding: 4px;
+  background-color: #fff;
+}
+
+.franchise-details {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #333333; /* Charcoal */
+}
+
+.franchise-details p {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.info-btn {
+  background-color: #0a1f44; /* Navy Blue */
+  border: none;
+  color: white;
+  padding: 10px 16px; /* Updated padding */
+  border-radius: 8px; /* Updated border radius */
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.info-btn:hover {
+  background-color: #ffa500; /* Bright Orange */
+}
+
+.investment-info {
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-size: 0.92rem;
+  border-left: 4px solid #5f4a32; /* Dark brown */
+  color: #5f4a32; /* Dark brown */
+}
+
+.investment-info p {
+  margin: 5px 0;
+}
+
+.franchise-footer {
+  padding: 15px 20px;
+  background-color: transparent; /* Removed background */
+  text-align: right;
+  border-top: none; /* Removed border */
+}
+
+.rating {
+  font-size: 1rem;
+  color: #ffc107;
+  font-weight: bold;
+  background-color: #ffa500; /* Bright Orange */
+  padding: 6px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .container-retail,
+  .container-shoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container1,
+  .container2,
+  .container3 {
+    max-width: 100%;
+  }
+}

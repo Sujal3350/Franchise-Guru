@@ -1,0 +1,152 @@
+/* Pump.css */
+
+.po {
+  padding: 40px 20px;
+  background-color: #f5f6fa; /* Light Gray */
+  margin-top: 1260px;
+}
+
+.pump {
+  margin-bottom: 40px;
+}
+
+.container-pump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.container1, .container2, .container3 {
+  flex: 1 1 calc(33.333% - 20px);
+  display: flex;
+  justify-content: center;
+}
+
+.franchise-card {
+  background-color: #fff; /* White for contrast */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Updated shadow to match Food.css */
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.franchise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.franchise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.franchise-name {
+  font-size: 1.5rem;
+  color: #0a1f44; /* Navy Blue */
+}
+
+.verified {
+  background-color: #00a9e0; /* Sky Blue */
+  color: white;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.franchise-content {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.franchise-photo img {
+  width: 100px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  padding: 4px;
+  background-color: #fff;
+}
+
+.franchise-details p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #333333; /* Charcoal */
+}
+
+.info-btn {
+  margin-top: 10px;
+  background-color: #0a1f44; /* Navy Blue */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-btn a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.info-btn:hover {
+  background-color: #ffa500; /* Bright Orange */
+}
+
+.investment-info {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #5f4a32; /* Dark brown from Food.css */
+}
+
+.investment-info p {
+  margin: 4px 0;
+}
+
+.franchise-footer {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.rating {
+  background-color: #ffa500; /* Bright Orange */
+  color: #fff;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container1, .container2, .container3 {
+    flex: 1 1 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container1, .container2, .container3 {
+    flex: 1 1 100%;
+  }
+
+  .franchise-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .franchise-photo img {
+    width: 80px;
+    height: 60px;
+  }
+}
