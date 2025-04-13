@@ -2,7 +2,6 @@ import React from 'react';
 import dominos from '../../assets/dominos.png';
 import haldiram from '../../assets/haldiram.png';
 import subway from '../../assets/subway.png';
-
 import burgerking from '../../assets/burgerking.jpg';
 import lapinoz from '../../assets/lapinoz.jpg';
 import martinoz from '../../assets/martinoz.jpg';
