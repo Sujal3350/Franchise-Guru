@@ -39,3 +39,16 @@
     background-color: #ffa500; /* Bright Orange */
     color: #ffffff; /* White text on hover */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

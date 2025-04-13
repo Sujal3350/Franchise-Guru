@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Pump.css';
 import nayara from '../../assets/nayara.jpg';
 import iocl from '../../assets/iocl.jpg';
@@ -7,225 +7,187 @@ import shell from '../../assets/shell.png';
 import hp from '../../assets/hp.jpg';
 import jiobp from '../../assets/jiobp.png';
 
+const franchiseData = [
+  {
+    id: 1,
+    name: 'Nayara',
+    logo: nayara,
+    category: 'Fuel Station',
+    expansion: 'Delhi, Haryana, Himachal Pradesh, ... +22 more',
+    established: 1555,
+    launched: 1932,
+    investment: 'INR 3 Cr - 5 Cr',
+    space: '800-1200 sq.ft',
+    outlets: '6,000+ (India)',
+    type: 'Petrol Pump Franchise',
+    headquarters: 'Mumbai, Maharashtra, India',
+    rating: 4.9,
+    link: 'https://www.nayaraenergy.com/retail/petrol-pump-dealership-apply',
+  },
+  {
+    id: 2,
+    name: 'IOCL',
+    logo: iocl,
+    category: 'Fuel Station',
+    expansion: 'Delhi, Haryana, Himachal Pradesh, ... +22 more',
+    established: 1992,
+    launched: 2000,
+    investment: 'INR 2 Cr - 6 Cr',
+    space: '1000 - 2000 sq.ft',
+    outlets: '34,000 +',
+    type: 'Retail Outlet (Petrol Pump)',
+    headquarters: 'New Delhi, India',
+    rating: 4.6,
+    link: 'https://iocl.com/pages/ro-ksk-dealerships-overview',
+  },
+  {
+    id: 3,
+    name: 'Reliance',
+    logo: reliance,
+    category: 'Fuel Station',
+    expansion: 'Delhi, Haryana, Himachal Pradesh, ... +22 more',
+    established: 2006,
+    launched: 2009,
+    investment: 'INR 2 Cr - 6 Cr',
+    space: '800 - 1500 sq.ft',
+    outlets: '1400+',
+    type: 'Retail Outlet',
+    headquarters: 'Mumbai, Maharashtra, India',
+    rating: 4.5,
+    link: 'https://www.lendingkart.com/blog/reliance-petrol-pump-dealership/',
+  },
+  {
+    id: 4,
+    name: 'Shell',
+    logo: shell,
+    category: 'Fuel Station',
+    expansion: 'Delhi, Haryana, Himachal Pradesh, ... +22 more',
+    established: 1555,
+    launched: 1932,
+    investment: 'INR 3 Cr - 5 Cr',
+    space: '800-1200 sq.ft',
+    outlets: '6,000+ (India)',
+    type: 'Petrol Pump Franchise',
+    headquarters: 'Mumbai, Maharashtra, India',
+    rating: 4.9,
+    link: 'https://www.shell.in/business-customers/business-opportunity-shell-retailership.html#iframe=L2Zvcm1zL3NoZWxsX3JldGFpbGVyX3Byb2dyYW1faW5fZW4',
+  },
+  {
+    id: 5,
+    name: 'HP',
+    logo: hp,
+    category: 'Fuel Station',
+    expansion: 'Delhi, Haryana, Himachal Pradesh, ... +22 more',
+    established: 1992,
+    launched: 2000,
+    investment: 'INR 2 Cr - 6 Cr',
+    space: '1000 - 2000 sq.ft',
+    outlets: '34,000 +',
+    type: 'Retail Outlet (Petrol Pump)',
+    headquarters: 'New Delhi, India',
+    rating: 4.6,
+    link: 'https://hindustanpetroleum.com/pages/petrol-pump-dealership-cocos',
+  },
+  {
+    id: 6,
+    name: 'Jio bp',
+    logo: jiobp,
+    category: 'Fuel Station',
+    expansion: 'Delhi, Haryana, Himachal Pradesh, ... +22 more',
+    established: 2006,
+    launched: 2009,
+    investment: 'INR 2 Cr - 6 Cr',
+    space: '800 - 1500 sq.ft',
+    outlets: '1400+',
+    type: 'Retail Outlet',
+    headquarters: 'Mumbai, Maharashtra, India',
+    rating: 4.5,
+    link: 'https://www.jiobp.com/partners',
+  },
+];
+
 function Pump() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredFranchises = franchiseData.filter((franchise) =>
+    franchise.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <>
-      <div className="po">
-
-        {/* First Row of Franchises */}
-        <div className="pump">
-          <div className="container-pump">
-
-            {/* Nayara */}
-            <div className="container1">
-              <div className="franchise-card">
-                <div className="franchise-header">
-                  <h2 className="franchise-name">Nayara</h2>
-                  <span className="verified">✔ Verified</span>
-                </div>
-                <div className="franchise-content">
-                  <div className="franchise-photo">
-                    <p><img src={nayara} alt="Nayara" /></p>
-                  </div>
-                  <div className="franchise-details">
-                    <p>Locations looking for expansion<br />Delhi, Haryana, Himachal Pradesh, ... +22 more</p>
-                    <p>Establishment year: <strong>1555</strong></p>
-                    <p>Franchising Launch Date: <strong>1932</strong></p>
-                    <button className="info-btn">
-                      <a href="https://www.nayaraenergy.com/retail/petrol-pump-dealership-apply" target="_blank" rel="noreferrer">Apply for dealership</a>
-                    </button>
-                  </div>
-                </div>
-                <div className="investment-info">
-                  <p>Investment size: <strong>INR 3 Cr - 5 Cr</strong></p>
-                  <p>Space required: <strong>800-1200 sq.ft</strong></p>
-                  <p>Franchise Outlets: <strong>6,000+ (India)</strong></p>
-                  <p>Franchise Type: <strong>Petrol Pump Franchise</strong></p>
-                  <p>Headquarter: <strong>Mumbai, Maharashtra, India</strong></p>
-                </div>
-                <div className="franchise-footer">
-                  <div className="rating">⭐ 4.9</div>
-                </div>
-              </div>
-            </div>
-
-            {/* IOCL */}
-            <div className="container2">
-              <div className="franchise-card">
-                <div className="franchise-header">
-                  <h2 className="franchise-name">IOCL</h2>
-                  <span className="verified">✔ Verified</span>
-                </div>
-                <div className="franchise-content">
-                  <div className="franchise-photo">
-                    <p><img src={iocl} alt="IOCL" /></p>
-                  </div>
-                  <div className="franchise-details">
-                    <p>Locations looking for expansion<br />Delhi, Haryana, Himachal Pradesh, ... +22 more</p>
-                    <p>Establishment year: <strong>1992</strong></p>
-                    <p>Franchising Launch Date: <strong>2000</strong></p>
-                    <button className="info-btn">
-                      <a href="https://iocl.com/pages/ro-ksk-dealerships-overview" target="_blank" rel="noreferrer">Apply for dealership</a>
-                    </button>
-                  </div>
-                </div>
-                <div className="investment-info">
-                  <p>Investment size: <strong>INR 2 Cr - 6 Cr</strong></p>
-                  <p>Space required: <strong>1000 - 2000 sq.ft</strong></p>
-                  <p>Franchise Outlets: <strong>34,000 +</strong></p>
-                  <p>Franchise Type: <strong>Retail Outlet (Petrol Pump)</strong></p>
-                  <p>Headquarter: <strong>New Delhi, India</strong></p>
-                </div>
-                <div className="franchise-footer">
-                  <div className="rating">⭐ 4.6</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Reliance Petroleum */}
-            <div className="container3">
-              <div className="franchise-card">
-                <div className="franchise-header">
-                  <h2 className="franchise-name">Reliance </h2>
-                  <span className="verified">✔ Verified</span>
-                </div>
-                <div className="franchise-content">
-                  <div className="franchise-photo">
-                    <p><img src={reliance} alt="Reliance Petroleum" /></p>
-                  </div>
-                  <div className="franchise-details">
-                    <p>Locations looking for expansion<br />Delhi, Haryana, Himachal Pradesh, ... +22 more</p>
-                    <p>Establishment year: <strong>2006</strong></p>
-                    <p>Franchising Launch Date: <strong>2009</strong></p>
-                    <button className="info-btn">
-                      <a href="https://www.lendingkart.com/blog/reliance-petrol-pump-dealership/" target="_blank" rel="noreferrer">Apply for dealership</a>
-                    </button>
-                  </div>
-                </div>
-                <div className="investment-info">
-                  <p>Investment size: <strong>INR 2 Cr - 6 Cr</strong></p>
-                  <p>Space required: <strong>800 - 1500 sq.ft</strong></p>
-                  <p>Franchise Outlets: <strong>1400+</strong></p>
-                  <p>Franchise Type: <strong>Retail Outlet</strong></p>
-                  <p>Headquarter: <strong>Mumbai, Maharashtra, India</strong></p>
-                </div>
-                <div className="franchise-footer">
-                  <div className="rating">⭐ 4.5</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Second Row of Franchises */}
-        <div className="pump">
-          <div className="container-pump">
-
-            {/* Shell */}
-            <div className="container1">
-              <div className="franchise-card">
-                <div className="franchise-header">
-                  <h2 className="franchise-name">Shell</h2>
-                  <span className="verified">✔ Verified</span>
-                </div>
-                <div className="franchise-content">
-                  <div className="franchise-photo">
-                    <p><img src={shell} alt="Shell" /></p>
-                  </div>
-                  <div className="franchise-details">
-                    <p>Locations looking for expansion<br />Delhi, Haryana, Himachal Pradesh, ... +22 more</p>
-                    <p>Establishment year: <strong>1555</strong></p>
-                    <p>Franchising Launch Date: <strong>1932</strong></p>
-                    <button className="info-btn">
-                      <a href="https://www.shell.in/business-customers/business-opportunity-shell-retailership.html#iframe=L2Zvcm1zL3NoZWxsX3JldGFpbGVyX3Byb2dyYW1faW5fZW4" target="_blank" rel="noreferrer">Apply for dealership</a>
-                    </button>
-                  </div>
-                </div>
-                <div className="investment-info">
-                  <p>Investment size: <strong>INR 3 Cr - 5 Cr</strong></p>
-                  <p>Space required: <strong>800-1200 sq.ft</strong></p>
-                  <p>Franchise Outlets: <strong>6,000+ (India)</strong></p>
-                  <p>Franchise Type: <strong>Petrol Pump Franchise</strong></p>
-                  <p>Headquarter: <strong>Mumbai, Maharashtra, India</strong></p>
-                </div>
-                <div className="franchise-footer">
-                  <div className="rating">⭐ 4.9</div>
-                </div>
-              </div>
-            </div>
-
-            {/* HP */}
-            <div className="container2">
-              <div className="franchise-card">
-                <div className="franchise-header">
-                  <h2 className="franchise-name">HP</h2>
-                  <span className="verified">✔ Verified</span>
-                </div>
-                <div className="franchise-content">
-                  <div className="franchise-photo">
-                    <p><img src={hp} alt="HP" /></p>
-                  </div>
-                  <div className="franchise-details">
-                    <p>Locations looking for expansion<br />Delhi, Haryana, Himachal Pradesh, ... +22 more</p>
-                    <p>Establishment year: <strong>1992</strong></p>
-                    <p>Franchising Launch Date: <strong>2000</strong></p>
-                    <button className="info-btn">
-                      <a href="https://hindustanpetroleum.com/pages/petrol-pump-dealership-cocos" target="_blank" rel="noreferrer">Apply for dealership</a>
-                    </button>
-                  </div>
-                </div>
-                <div className="investment-info">
-                  <p>Investment size: <strong>INR 2 Cr - 6 Cr</strong></p>
-                  <p>Space required: <strong>1000 - 2000 sq.ft</strong></p>
-                  <p>Franchise Outlets: <strong>34,000 +</strong></p>
-                  <p>Franchise Type: <strong>Retail Outlet (Petrol Pump)</strong></p>
-                  <p>Headquarter: <strong>New Delhi, India</strong></p>
-                </div>
-                <div className="franchise-footer">
-                  <div className="rating">⭐ 4.6</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Jio BP */}
-            <div className="container3">
-              <div className="franchise-card">
-                <div className="franchise-header">
-                  <h2 className="franchise-name">Jio bp</h2>
-                  <span className="verified">✔ Verified</span>
-                </div>
-                <div className="franchise-content">
-                  <div className="franchise-photo">
-                    <p><img src={jiobp} alt="Jio BP" /></p>
-                  </div>
-                  <div className="franchise-details">
-                    <p>Locations looking for expansion<br />Delhi, Haryana, Himachal Pradesh, ... +22 more</p>
-                    <p>Establishment year: <strong>2006</strong></p>
-                    <p>Franchising Launch Date: <strong>2009</strong></p>
-                    <button className="info-btn">
-                      <a href="https://www.jiobp.com/partners" target="_blank" rel="noreferrer">Apply for dealership</a>
-                    </button>
-                  </div>
-                </div>
-                <div className="investment-info">
-                  <p>Investment size: <strong>INR 2 Cr - 6 Cr</strong></p>
-                  <p>Space required: <strong>800 - 1500 sq.ft</strong></p>
-                  <p>Franchise Outlets: <strong>1400+</strong></p>
-                  <p>Franchise Type: <strong>Retail Outlet</strong></p>
-                  <p>Headquarter: <strong>Mumbai, Maharashtra, India</strong></p>
-                </div>
-                <div className="franchise-footer">
-                  <div className="rating">⭐ 4.5</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+    <div className="po">
+      {/* Search Bar */}
+      <div className="search-bar">
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            placeholder="Search fuel franchises..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            aria-label="Search fuel franchises"
+          />
+          <button type="submit" className="search-btn">
+            🔍
+          </button>
+        </form>
       </div>
-    </>
+
+      {/* Franchise Cards */}
+      <div className="container-pump">
+        {filteredFranchises.length > 0 ? (
+          filteredFranchises.map((franchise) => (
+            <div key={franchise.id} className="franchise-card">
+              <div className="franchise-header">
+                <h2 className="franchise-name">{franchise.name}</h2>
+                <span className="verified">✔ Verified</span>
+              </div>
+              <div className="franchise-content">
+                <div className="franchise-photo" data-category={franchise.category}>
+                  <img src={franchise.logo} alt={franchise.name} />
+                </div>
+                <div className="franchise-details">
+                  <p>
+                    <strong>Expansion:</strong> {franchise.expansion}
+                  </p>
+                  <p>
+                    <strong>Established:</strong> {franchise.established}
+                  </p>
+                  <p>
+                    <strong>Launched:</strong> {franchise.launched}
+                  </p>
+                  <div className="info-btn">
+                    <a href={franchise.link} target="_blank" rel="noopener noreferrer">
+                      Apply for Dealership
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="investment-info">
+                <p>
+                  <strong>Investment:</strong> {franchise.investment}
+                </p>
+                <p>
+                  <strong>Space:</strong> {franchise.space}
+                </p>
+                <p>
+                  <strong>Outlets:</strong> {franchise.outlets}
+                </p>
+                <p>
+                  <strong>Type:</strong> {franchise.type}
+                </p>
+                <p>
+                  <strong>Headquarters:</strong> {franchise.headquarters}
+                </p>
+              </div>
+              <div className="franchise-footer">
+                <div className="rating">⭐ {franchise.rating}</div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="no-results">No franchises found. Try a different search.</p>
+        )}
+      </div>
+    </div>
   );
 }
 

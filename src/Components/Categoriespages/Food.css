@@ -1,125 +1,383 @@
-/* Food.css */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .food {
-  background-color: #f5f6fa; /* Light Gray */
-  padding: 40px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e6f0fa, #f5f6fa); /* Light Gray Gradient */
+  padding: 120px 5% 80px; /* Adjusted top padding for search bar */
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
-
 .fo {
-  margin-top: 1260px;
+  background: linear-gradient(135deg, #e6f0fa, #f5f6fa); /* Light Gray Gradient */
+  padding: 120px 5% 80px; /* Adjusted top padding for search bar */
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  margin-top: 1250px;
+ 
+}
+/* Search Bar */
+.search-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: linear-gradient(135deg, #e6f0fa, #f5f6fa); /* Match .food background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.container-food {
+.search-bar form {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.search-bar input {
+  flex: 1;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 1rem;
+  color: #333333; /* Charcoal */
+  border: none;
+  background: transparent;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: #6b7280;
+}
+
+.search-bar .search-btn {
+  background: #00a9e0; /* Sky Blue */
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar .search-btn:hover {
+  background: #0086b3;
+  transform: scale(1.1);
+}
+
+/* Container for Food Cards */
+.container-food {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  max-width: 1300px;
-  margin: auto;
+  max-width: 1400px;
+  margin: 40px auto 0; /* Margin to separate from search bar */
+  padding: 20px 0;
 }
 
-.container1,
-.container2,
-.container3 {
-  flex: 1 1 300px;
-  max-width: 400px;
-}
-
+/* Franchise Card */
 .franchise-card {
-  background-color: #fff; /* White for contrast */
+  background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   padding: 24px;
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: cardFadeIn 0.6s ease-out forwards;
 }
 
 .franchise-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
+/* Card Animation */
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Franchise Header */
 .franchise-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .franchise-name {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #0a1f44; /* Navy Blue */
+  font-weight: 600;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.franchise-card:hover .franchise-name {
+  color: #00a9e0; /* Sky Blue */
 }
 
 .verified {
-  background-color: #00a9e0; /* Sky Blue */
-  color: white;
+  background: #00a9e0; /* Sky Blue */
+  color: #ffffff;
   font-size: 0.85rem;
-  padding: 4px 10px;
-  border-radius: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transform: scale(1);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.franchise-card:hover .verified {
+  transform: scale(1.1);
+  background: #0086b3;
+}
+
+/* Franchise Content */
 .franchise-content {
   display: flex;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.franchise-photo {
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .franchise-photo img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  padding: 4px;
-  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  padding: 6px;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.franchise-card:hover .franchise-photo img {
+  transform: scale(1.05);
+}
+
+/* Card Overlay for Category */
+.franchise-photo::after {
+  content: attr(data-category);
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  background: #ffa500; /* Bright Orange */
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.franchise-card:hover .franchise-photo::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.franchise-details {
+  flex: 1;
 }
 
 .franchise-details p {
   font-size: 0.95rem;
   color: #333333; /* Charcoal */
-  margin: 6px 0;
+  margin: 8px 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
+.franchise-details p strong {
+  color: #0a1f44; /* Navy Blue */
+}
+
+.franchise-card:hover .franchise-details p {
+  color: #4a5568;
+}
+
+/* Apply Button */
 .info-btn a {
   display: inline-block;
-  background-color: #0a1f44; /* Navy Blue */
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
+  background: #0a1f44; /* Navy Blue */
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 25px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .info-btn a:hover {
-  background-color: #ffa500; /* Bright Orange */
+  background: #ffa500; /* Bright Orange */
+  transform: scale(1.05);
 }
 
+/* Investment Info */
 .investment-info {
-  font-size: 0.92rem;
-  color: #5f4a32; /* Dark brown from Home.css */
-  margin-top: 12px;
-  padding-left: 8px;
-  border-left: 4px solid #5f4a32; /* Dark brown */
+  background: #f5f6fa; /* Light Gray */
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 4px solid #0a1f44; /* Navy Blue */
+  transition: background 0.3s ease;
 }
 
 .investment-info p {
+  font-size: 0.95rem;
+  color: #333333; /* Charcoal */
   margin: 8px 0;
+  line-height: 1.6;
 }
 
+.investment-info p strong {
+  color: #0a1f44; /* Navy Blue */
+}
+
+.franchise-card:hover .investment-info {
+  background: #e6f0fa;
+}
+
+/* Franchise Footer */
 .franchise-footer {
   display: flex;
   justify-content: flex-end;
-  margin-top: 16px;
 }
 
 .rating {
   font-size: 1rem;
-  color: #ffc107;
-  font-weight: bold;
-  background-color: #ffa500; /* Bright Orange */
-  padding: 6px 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  color: #ffffff;
+  background: #ffa500; /* Bright Orange */
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.franchise-card:hover .rating {
+  transform: scale(1.1);
+  background: #e69500;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333333; /* Charcoal */
+  margin: 40px 0;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container-food {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .franchise-name {
+    font-size: 1.6rem;
+  }
+
+  .search-bar {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .food {
+    padding: 100px 4% 60px; /* Adjusted for smaller screens */
+  }
+
+  .franchise-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .franchise-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info-btn a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-bar {
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .search-bar input {
+    height: 45px;
+  }
+
+  .search-bar .search-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .franchise-name {
+    font-size: 1.4rem;
+  }
+
+  .info-btn a {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .rating {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .search-bar input {
+    font-size: 0.95rem;
+  }
 }

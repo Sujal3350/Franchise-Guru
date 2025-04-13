@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 .home-container {
@@ -21,7 +22,7 @@
   min-height: 80vh;
   padding: 80px 5%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../../assets/hero-bg.jpg') center/cover no-repeat;
+    url('../../assets/newbg1.jpg') center/cover no-repeat;
   text-align: center;
 }
 
@@ -356,27 +357,9 @@
     font-size: 1.1rem;
   }
 
-  .hero-cta {
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
-
-  .about-section,
-  .featured-section,
-  .testimonial-section,
-  .newsletter-section {
-    padding: 60px 4%;
-  }
-
-  .about-section h2,
-  .featured-section h2,
-  .testimonial-section h2,
-  .newsletter-content h2 {
-    font-size: 2rem;
-  }
-
-  .newsletter-form {
-    flex-direction: column;
+  .about-content,
+  .testimonial-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 

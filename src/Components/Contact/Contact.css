@@ -135,3 +135,20 @@
       transform: translateY(0);
     }
   }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 0.9rem;
+    }
+  }

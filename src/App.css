@@ -5,3 +5,22 @@ html, body {
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    body {
+        font-size: 90%; /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 85%; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 80%; /* Adjust font size for mobile screens */
+    }
+}
