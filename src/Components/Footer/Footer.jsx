@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Explore Franchise Guru</h4>
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/aboutus">About Us</a></li>
             <li>Franchise News</li>
             <li>Testimonials</li>
           </ul>
@@ -17,19 +17,19 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Categories</h4>
           <ul>
-            <li>Food & Beverage</li>
-            <li>Retail</li>
-            <li>Petrol Pumps</li>
-            <li>Automobile</li>
+            <li><a href="/food">Food & Beverage</a></li>
+            <li><a href="/retail">Retail</a></li>
+            <li><a href="/pump">Petrol Pumps</a></li>
+            <li><a href="/automobile">Automobile</a></li>
           </ul>
         </div>
         <div className="footer-column">
           <h4>Support</h4>
           <ul>
-            <li>Contact Us</li>
+            <li><a href="/contact">Contact Us</a></li>
             <li>FAQs</li>
-            <li>Terms & Conditions</li>
-            <li>Privacy Policy</li>
+            <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
         <div className="footer-column">

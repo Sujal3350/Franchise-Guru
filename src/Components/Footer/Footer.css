@@ -28,16 +28,24 @@
   .footer-column ul {
     list-style: none;
     padding: 0;
+    
   }
   
   .footer-column ul li {
     margin-bottom: 8px;
     cursor: pointer;
     transition: color 0.3s;
+    text-decoration: none;
   }
   
   .footer-column ul li:hover {
     color: #00a9e0; /* Sky Blue */
+    
+  }
+
+  .footer-column ul li a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the inherited color */
   }
   
 /* From Uiverse.io by vinodjangid07 */ 
