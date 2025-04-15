@@ -14,7 +14,7 @@ function Aboutus() {
 
   const testimonials = [
     {
-      name: 'Anita Sharma',
+      name: 'Dev Vaghela',
       role: 'Franchise Owner',
       quote: 'Franchise Guru made finding the perfect business opportunity so easy! Their support team is amazing.',
     },
