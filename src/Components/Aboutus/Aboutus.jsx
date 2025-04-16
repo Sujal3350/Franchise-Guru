@@ -237,7 +237,95 @@ function Aboutus() {
           </motion.div>
         </div>
       </motion.div>
-    </main>
+    
+        {/* Testimonial Section */}
+        <motion.div
+          className="testimonial-section"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <h2>What Our Users Say</h2>
+          <div className="testimonial-grid">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="testimonial-card"
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <img src={parth} alt={`${testimonial.name}'s profile`} className="testimonial-icon" />
+                <p className="quote">"{testimonial.quote}"</p>
+                <p className="name">{testimonial.name}</p>
+                <p className="role">{testimonial.role}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Privacy Policy and Terms Section */}
+        <motion.div
+          className="about-section policy-section"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
+        >
+          <h2>Our Policies</h2>
+          <div className="policy-grid">
+            <motion.div
+              className="policy-card"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3>Privacy Policy</h3>
+              <p>
+                At Franchise Guru, we prioritize your privacy. Our Privacy Policy outlines how we collect, use,
+                and protect your personal information to ensure a secure experience.
+              </p>
+              <Link to="/privacy-policy" className="policy-link">
+                Read Full Privacy Policy
+              </Link>
+            </motion.div>
+            <motion.div
+              className="policy-card"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3>Terms and Conditions</h3>
+              <p>
+                Our Terms and Conditions govern your use of the Franchise Guru platform, ensuring a fair and
+                transparent relationship with our users.
+              </p>
+              <Link to="/terms-and-conditions" className="policy-link">
+                Read Full Terms and Conditions
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          className="about-cta"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.6 }}
+        >
+          <h3>Ready to Begin Your Franchise Journey?</h3>
+          <Link to="/categories">
+            <motion.button
+              className="explore-btn"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+            >
+              Explore Opportunities
+            </motion.button>
+          </Link>
+        </motion.div>
+      </div>
+    </motion.div>
+</main>
   );
 }
 
