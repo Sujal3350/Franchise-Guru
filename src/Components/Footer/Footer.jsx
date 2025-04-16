@@ -9,7 +9,7 @@ const Footer = () => {
           <h4>Explore Franchise Guru</h4>
           <ul>
             <li><a href="/home">Home</a></li>
-            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="/about">About Us</a></li>
             <li>Franchise News</li>
             <li>Testimonials</li>
           </ul>
