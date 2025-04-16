@@ -4,8 +4,7 @@ import './Contact.css';
 
 function Contact() {
   return (
-    <>
-    
+    <main> 
     <div className="contact-page">
       <section className="contact-section">
         <div className="contact-box">
@@ -27,7 +26,7 @@ function Contact() {
       </section>
 
     </div>
-    </>
+    </main>
   );
 }
 
