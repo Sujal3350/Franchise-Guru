@@ -11,25 +11,25 @@ import Pump from './Components/Categoriespages/Pump';
 import Retail from './Components/Categoriespages/Retail';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import Layout from './Components/Pages/Layout';
 
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/categories" element={<Categories />} />
-        {/* <Route path="/order" element={<Order/>} /> */}
-        <Route path="/about" element={<Aboutus />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/food" element={<Food />} />
-        <Route path="/pump" element={<Pump />} />
-        <Route path="/retail" element={<Retail />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
+        <Route path="/" element={<Layout />}> 
+            <Route path="/" element={<Home />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/about" element={<Aboutus />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/food" element={<Food />} />
+            <Route path="/pump" element={<Pump />} />
+            <Route path="/retail" element={<Retail />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register/>} />
+        </Route>
       </Routes>
-      <Footer />
     </>
   );
 }

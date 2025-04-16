@@ -192,6 +192,7 @@ const Categories = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
+        
         <p>Ready to find your perfect franchise?</p>
         <Link to="/categories">
           <motion.button
