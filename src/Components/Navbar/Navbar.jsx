@@ -10,7 +10,7 @@ function Navbar() {
         <nav className="navbar">
             <div className="navbar-logo">Franchise Guru</div>
             <div className="navbar-links">
-                <Link to="/">Home</Link>
+                <Link to="/home">Home</Link>
                 <Link to="/categories">Categories</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
