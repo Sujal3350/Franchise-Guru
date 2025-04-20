@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Login.css';
 
 function Login() {
@@ -52,7 +53,7 @@ function Login() {
         {message && <p className="login-message">{message}</p>}
 
         <div className="login-footer">
-          <p>Don’t have an account? <a href="/register">Register</a></p>
+          <p>Don’t have an account? <Link to="/register">Register</Link></p>
         </div>
       </div>
     </div>
